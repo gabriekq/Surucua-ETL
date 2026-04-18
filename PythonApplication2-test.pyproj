@@ -1,0 +1,113 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>1413a8b6-a932-4733-8ee2-fdf1499d7f20</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>surucuaForCsv\Surucua_ETL.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>PythonApplication2-test</Name>
+    <RootNamespace>PythonApplication2-test</RootNamespace>
+    <TestFramework>unittest</TestFramework>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>MSBuild|envVirtual|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="PythonApplication2_test.py" />
+    <Compile Include="spark\application-10.py" />
+    <Compile Include="spark\application-12.py" />
+    <Compile Include="spark\application-13.py" />
+    <Compile Include="spark\application-15.py" />
+    <Compile Include="spark\application-2.py" />
+    <Compile Include="spark\application-3.py" />
+    <Compile Include="spark\application-4.py" />
+    <Compile Include="spark\application-5.py" />
+    <Compile Include="spark\application-6.py" />
+    <Compile Include="spark\application-7.py" />
+    <Compile Include="spark\application-8.py" />
+    <Compile Include="spark\application-9.py" />
+    <Compile Include="spark\application-11.py" />
+    <Compile Include="spark\applicationReadJson.py" />
+    <Compile Include="spark\application-14.py" />
+    <Compile Include="spark\custon-mendonca.py" />
+    <Compile Include="spark\exercice-1.py" />
+    <Compile Include="spark\exercice-2.py" />
+    <Compile Include="surucuaForCsv\ManageData.py" />
+    <Compile Include="surucuaForCsv\ManageFile.py" />
+    <Compile Include="surucuaForCsv\Surucua_ETL.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="files\" />
+    <Folder Include="files\json\" />
+    <Folder Include="files\recipecsv\" />
+    <Folder Include="files\simple_count.csv\" />
+    <Folder Include="spark-warehouse\" />
+    <Folder Include="spark-warehouse\my_sql_table\" />
+    <Folder Include="spark\" />
+    <Folder Include="surucuaForCsv\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="files\11-0.txt" />
+    <Content Include="files\1342-0.txt" />
+    <Content Include="files\1661-0.txt" />
+    <Content Include="files\2701-0.txt" />
+    <Content Include="files\30254-0.txt" />
+    <Content Include="files\84-0.txt" />
+    <Content Include="files\BroadcastLogs_2018_Q3_M8.CSV" />
+    <Content Include="files\Call_Signs.csv" />
+    <Content Include="files\CD_Category.csv" />
+    <Content Include="files\CD_ProgramClass.csv" />
+    <Content Include="files\data dictionary.doc" />
+    <Content Include="files\LogIdentifier.csv" />
+    <Content Include="files\recipecsv\.part-00000-f8bfa7d1-fc83-42c7-a04d-6264e5dbfca7-c000.csv.crc" />
+    <Content Include="files\recipecsv\._SUCCESS.crc" />
+    <Content Include="files\recipecsv\part-00000-f8bfa7d1-fc83-42c7-a04d-6264e5dbfca7-c000.csv" />
+    <Content Include="files\recipecsv\_SUCCESS" />
+    <Content Include="files\shows-recipes_extended.json" />
+    <Content Include="files\json\shows-silicon-valley.json" />
+    <Content Include="files\simple_count.csv\.part-00000-16620195-aaea-4939-a687-1a64169c7538-c000.csv.crc" />
+    <Content Include="files\simple_count.csv\._SUCCESS.crc" />
+    <Content Include="files\simple_count.csv\part-00000-16620195-aaea-4939-a687-1a64169c7538-c000.csv" />
+    <Content Include="files\simple_count.csv\_SUCCESS" />
+    <Content Include="requirements.txt" />
+    <Content Include="spark-warehouse\my_sql_table\.part-00000-47669843-935d-4374-9e20-17acb57ce0aa-c000.snappy.parquet.crc" />
+    <Content Include="spark-warehouse\my_sql_table\._SUCCESS.crc" />
+    <Content Include="spark-warehouse\my_sql_table\part-00000-47669843-935d-4374-9e20-17acb57ce0aa-c000.snappy.parquet" />
+    <Content Include="spark-warehouse\my_sql_table\_SUCCESS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="envVirtual\">
+      <Id>envVirtual</Id>
+      <Version>3.10</Version>
+      <Description>envVirtual (Python 3.10 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.10" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

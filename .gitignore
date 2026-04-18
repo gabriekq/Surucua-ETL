@@ -1,0 +1,4 @@
+envVirtual/
+.git
+.vs
+/files/*
