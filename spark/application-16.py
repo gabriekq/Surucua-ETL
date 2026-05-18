@@ -10,6 +10,7 @@ import numpy as np
 import pyspark.sql.types as T
 from py4j.protocol import Py4JJavaError
 import pprint
+import json
 
 dir_JSON="./files/json/shows-silicon-valley.json"
 
@@ -23,7 +24,7 @@ T.StructField("_links", episode_links_schema),
 T.StructField("airdate", T.DateType()),
 T.StructField("airstamp", T.TimestampType()),
 T.StructField("airtime", T.StringType()),
-T.StructField("id", T.IntegerType),
+T.StructField("id", T.StringType()),
 T.StructField("image", episode_image_schema),
 T.StructField("name", T.StringType()),
 T.StructField("number", T.LongType()),
@@ -45,24 +46,35 @@ shows_with_schema=shows_with_schema_wrong.select('*')
 
 shows_with_schema.printSchema()
 
-pprint.pprint(
-shows_with_schema.select(
-    F.explode("_embedded.episodes").alias("episode")
+other_shows_schema = T.StructType.fromJson(
+json.loads(shows_with_schema.schema.json())
 )
-.select("episode.airtime")
-.schema.jsonValue()
-)
+
+print(other_shows_schema == shows_with_schema.schema)
 
 ##Listing 6.21 Pretty-printing the schema
 
-shows_with_schema_wrong=shows_with_schema_wrong.withColumn("episodes", F.col("_embedded.episodes")).drop("_embedded")
 
-shows_with_schema_wrong_1=shows_with_schema_wrong.select(F.col('episodes.url'),F.col('episodes.name'))
+episodes =shows_with_schema.select(
+F.explode("_embedded.episodes").alias("episodes"),
+F.col("episodes.id"),
+F.col("episodes.url"),
+)
 
-print('before validation in try')
+#episodes.show(5, truncate=70)
 
-try:
- shows_with_schema_wrong_1.select(F.explode("name").alias("name"),F.explode("url").alias("url") ).show(20, False)
- #shows_with_schema_wrong.select(F.col('episodes.url')).show(truncate=False,n=20)
-except Py4JJavaError:
- pass
+episode_name_id=shows_with_schema.select(
+    F.map_from_arrays(
+    F.col("_embedded.episodes.id"), F.col("_embedded.episodes.name")
+).alias("name_id"))
+
+episode_name_id = episode_name_id.select(
+F.posexplode("name_id").alias("position", "id", "name")
+)
+
+#episode_name_id.show(5)
+
+collected = episodes.groupby("id").agg(
+F.collect_list("episodes").alias("episodes")
+)
+collected.count()
