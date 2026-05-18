@@ -5,7 +5,7 @@
     <ProjectGuid>1413a8b6-a932-4733-8ee2-fdf1499d7f20</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>surucuaForCsv\Surucua_ETL.py</StartupFile>
+    <StartupFile>spark\application-17.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -30,6 +30,8 @@
     <Compile Include="spark\application-12.py" />
     <Compile Include="spark\application-13.py" />
     <Compile Include="spark\application-15.py" />
+    <Compile Include="spark\application-16.py" />
+    <Compile Include="spark\application-17.py" />
     <Compile Include="spark\application-2.py" />
     <Compile Include="spark\application-3.py" />
     <Compile Include="spark\application-4.py" />
