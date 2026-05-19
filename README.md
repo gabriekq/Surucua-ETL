@@ -8,4 +8,6 @@ ManageFile.py – Responsible to read the csv file and get the file name and the
 
 ManageData.py – Responsible to connect to the database and insert the data read from the CSV file.
 
+At the spark folder there are files that was used for learn propose with the help of the book called – (Data Analysis With Python And Pyspark - 2022 - Manning)
+
 Disclaimer – For the development of the code there was no use of any AI tools at all.
