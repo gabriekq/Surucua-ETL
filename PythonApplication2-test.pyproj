@@ -5,7 +5,7 @@
     <ProjectGuid>1413a8b6-a932-4733-8ee2-fdf1499d7f20</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>spark\application-17.py</StartupFile>
+    <StartupFile>spark-etl\sparkApplication.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PythonApplication2_test.py" />
+    <Compile Include="spark-etl\sparkApplication.py" />
     <Compile Include="spark\application-10.py" />
     <Compile Include="spark\application-12.py" />
     <Compile Include="spark\application-13.py" />
@@ -54,7 +55,8 @@
     <Folder Include="files\" />
     <Folder Include="files\json\" />
     <Folder Include="files\recipecsv\" />
-    <Folder Include="files\simple_count.csv\" />
+    <Folder Include="files\simple_count\" />
+    <Folder Include="spark-etl\" />
     <Folder Include="spark-warehouse\" />
     <Folder Include="spark-warehouse\my_sql_table\" />
     <Folder Include="spark\" />
@@ -79,10 +81,10 @@
     <Content Include="files\recipecsv\_SUCCESS" />
     <Content Include="files\shows-recipes_extended.json" />
     <Content Include="files\json\shows-silicon-valley.json" />
-    <Content Include="files\simple_count.csv\.part-00000-16620195-aaea-4939-a687-1a64169c7538-c000.csv.crc" />
-    <Content Include="files\simple_count.csv\._SUCCESS.crc" />
-    <Content Include="files\simple_count.csv\part-00000-16620195-aaea-4939-a687-1a64169c7538-c000.csv" />
-    <Content Include="files\simple_count.csv\_SUCCESS" />
+    <Content Include="files\simple_count\.part-00000-16620195-aaea-4939-a687-1a64169c7538-c000.csv.crc" />
+    <Content Include="files\simple_count\._SUCCESS.crc" />
+    <Content Include="files\simple_count\part-00000-16620195-aaea-4939-a687-1a64169c7538-c000.csv" />
+    <Content Include="files\simple_count\_SUCCESS" />
     <Content Include="requirements.txt" />
     <Content Include="spark-warehouse\my_sql_table\.part-00000-47669843-935d-4374-9e20-17acb57ce0aa-c000.snappy.parquet.crc" />
     <Content Include="spark-warehouse\my_sql_table\._SUCCESS.crc" />

@@ -25,9 +25,14 @@ timestampFormat="yyyy-MM-dd",
 )
 
 
+coluts_list = [];
+coluts_list.append('BroadcastLogID')
+coluts_list.append('LogServiceID')
+coluts_list.append('LogDate')
+coluts_list.append('Duration')
 
 
-logs=logs.select('BroadcastLogID','LogServiceID','LogDate',"Duration")
+logs=logs.select(coluts_list)
 
 
 logs.show(5,False)
