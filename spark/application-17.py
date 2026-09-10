@@ -37,3 +37,5 @@ shows_with_struct= shows_with_schema_csv.select(
 )
 
 shows_with_struct.show(n=20,truncate=False)
+print('end')
+
